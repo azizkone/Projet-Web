@@ -1,0 +1,305 @@
+.header-top{
+padding: 20px 0px;
+display: table;
+width: 100%;
+}
+.logo {
+    padding: 25px 15px;
+}
+.contact-info{
+  padding: 45px 15px;
+}
+.contact-info ul {
+    list-style: none;
+    float: left;
+    margin: 0px;
+    padding: 5px 0px 0px 15px;
+    font-size: 10pt;
+}
+
+.contact-info i.fa {
+    border: 1px solid #e8e8e8;
+    color: #4183d7;
+    border-radius: 100%;
+    padding: 13px 15px;
+    font-size: 15pt;
+    float: left;
+	transition: .2s all ease-in-out;
+}
+.contact-info i.fa:hover {
+    background: #4183d7;
+    color: #fff;
+    border-color: #4183d7;
+}
+nav.navbar.navbar-default {
+	background:none;
+	border:none;
+	font-family: 'oswald';
+	font-size: 11pt;
+	text-transform:uppercase;
+	margin:0px;
+}
+
+ul.nav.navbar-nav {
+    background: #245a9f;
+}
+
+ul.nav.navbar-nav li a {
+    color: #fff !important;
+}
+
+ul.nav.navbar-nav li.active a {
+    background: #4183d7;
+}
+
+ul.nav.navbar-nav li {
+	transition:.2s all ease-in-out;
+}
+
+ul.nav.navbar-nav li:hover {
+    background: #4183d7;
+}
+
+ul.nav.navbar-nav li.active a:hover {
+    background:#4183d7;
+}
+
+ul.nav.navbar-nav li a {
+    padding: 15px 45px;
+}
+
+ul.nav.navbar-nav li.get-a-quote {
+    background:#4183d7;
+}
+
+ul.nav.navbar-nav li.get-a-quote:hover {
+    background:#245a9f;
+}
+/**
+DEUXIEME PARTIE
+*/
+#parte2{
+max-height: 580px;
+height: 580px;
+font-family:'open sans';
+    overflow: hidden;
+    visibility: inherit;
+    opacity: 1;
+    z-index: 20;
+}
+.doctor-img img{
+  width: 322px;
+  height: 513px;
+  background: ;
+  margin-left: 85.5px;
+  margin-top: 70px;
+}
+.text-1{
+  margin-top: -370px;
+  margin-left: 420px;
+}
+.text-1 h1{
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 32px;
+  left: 415.5px;
+  top: 220px;
+  visibility: visible;
+  z-index: 2;
+  opacity: 1;
+}
+.text-1 p{
+  color:#fff;
+    line-height: 20px;
+    border-width: 0px;
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: 0px;
+    font-size: 14px;
+    left: 415.5px;
+    top: 320px;
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+}
+.text-1 a{
+  text-decoration: none;
+  background: none;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 15px 30px;
+    color: #fff !important;
+    text-transform: uppercase;
+    z-index: 2;
+    line-height: 20px;
+    font-size: 14px;
+    visibility: visible;
+    opacity: 1;
+}
+.apppointment-img img{
+  visibility: visible;
+  opacity: 1;
+  margin-top: -370px;
+  margin-left: 950px;
+}
+
+/**
+TROISIEME PARTIE
+*/
+.service{
+  margin-top:100px;
+}
+.welcome {
+    padding: 80px 0px;
+    text-align: center;
+    font-family: 'oswald', sans-serif;
+}
+.welcome h2, .welcome h3,.welcome p {
+    font-family: 'oswald', sans-serif;
+}
+
+.welcome h2 {
+    color: #4183d7;
+    text-transform: uppercase;
+    font-size: 28pt;
+    margin-top: 0px;
+}
+
+.single-service h3.service-text {
+	padding: 100px 40px 50px;
+	background: #f7f7f7;
+	border: 1px solid #4183D9;
+	border-top: 0;
+	margin-top: -30px;
+	transition:.2s all ease-in-out;
+}
+
+.single-service i.fa {
+    color: #fff;
+    background: #4183D7;
+    font-size: 70pt;
+    padding: 30px;
+    margin-bottom: -40px;
+    min-width: 160px;
+    transition: .2s all ease-in-out;
+}
+
+.single-service:hover i.fa {
+    background: #393939;
+}
+
+.single-service {
+    position: relative;
+}
+
+.single-service .service-image {
+    position: absolute;
+    left: 50%;
+	margin-left:-5px;
+}
+
+section.welcome p {
+    margin-bottom: 40px;
+}
+
+.single-service:hover > h3.ambulance:before,
+.single-service:hover > h3.equipment:before,
+.single-service:hover > h3.appointment:before {
+    background-position: 0px -170px;
+}
+
+.single-service:hover > h3.service-text,
+.single-service:hover > h3.service-text,
+.single-service:hover > h3.service-text {
+	border-color:#393939;
+}
+
+a.no-hover:hover {
+	text-decoration:none;
+}
+
+.ambulance:before {
+    content: '';
+    background: url('../img/ambulance.png');
+    width: 167px;
+    height: 170px;
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    margin-left: -80px;
+    background-repeat: no-repeat;
+    transition: background 1s;
+}
+
+.equipment:before {
+    content: '';
+    background: url('../img/doctor-equipment.png');
+    width: 167px;
+    height: 170px;
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    margin-left: -80px;
+    background-repeat: no-repeat;
+	transition: background 1s;
+}
+
+/**
+TROISIEME PARTIE
+*/
+.appointment-form{
+  background-image: url(../img/group-doctor.jpg);
+    background-size: cover;
+    background-color: #4183d7;
+    position: relative;
+    z-index: 9;
+    background-position: center;
+    font-family: 'open sans';
+    color: #fff;
+    padding: 80px 0px;
+}
+
+.appointment-form1,
+.text-2 {
+	padding:15px 0px;
+}
+
+.appointment-form h2{
+text-transform: uppercase;
+    font-family: 'oswald';
+    line-height: 1.5;
+}
+.appointment-form h3 {
+    font-size: 15pt;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.appointment-form p{
+  line-height: 1.6;
+}
+.appointment-form form input,
+.appointment-form form textarea,
+.appointment-form form select{
+padding: 10px 15px;
+    background: none;
+    margin-bottom: 4%;
+    border: 1px solid #fff;
+    transition: .2s all ease-in-out;
+}
+.appointment-form form select {
+    -webkit-appearance: none;
+    color: #fff;
+    background: url(../img/arrow.png) 90% no-repeat;
+    margin-right: 4%;
+}
+.appointment-form button {
+    background: none;
+    text-transform: uppercase;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 25px;
+    margin-top: 15px;
+    transition: .2s all ease-in-out;
+}
