@@ -258,6 +258,7 @@ TROISIEME PARTIE
     font-family: 'open sans';
     color: #fff;
     padding: 80px 0px;
+    box-shadow: inset 2000px 0 0 0 rgba(0, 125, 255, 0.5);
 }
 
 .appointment-form1,
