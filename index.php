@@ -1,9 +1,14 @@
 <?php include('PHP/FormValidation.php'); ?>
+<?php
+include("PHP/session.class.php");
+$session =  new Session();
+?>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -11,6 +16,8 @@
   <title>Document</title>
 </head>
 <body>
+  <!-- permet l'affichage automatique des messages-->
+  <?php $session->flash(); ?>
   <div class="header">
     <div class="container">
       <div class="container-fluid">
@@ -56,7 +63,7 @@
     </div>
   </div>
   <!--###########################
-      DEUXIEME PARTIE
+    2 PARTIE
 #############################-->
 <div class="container-slider">
   <div class="slider" id="parte2">
@@ -89,7 +96,7 @@
 </div>
 </div>
 <!--###########################
-  TROISIEME PARTIE
+  3 PARTIE
 #############################-->
 <div class="welcome">
   <div class="container">
@@ -407,5 +414,7 @@
     </div>
   </div>
 </div>
+<script src="js\jquery.js"></script>
+<script type="text/javascript" src="js/notification.js"></script>
 </body>
 </html>

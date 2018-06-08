@@ -252,6 +252,7 @@ a.no-hover:hover {
 	transition: background 1s;
 }
 
+
 /**
 TROISIEME PARTIE
 */
@@ -340,9 +341,14 @@ button.appointment-submit {
 	transition:.2s all ease-in-out;
 }
 /*****partie submit***/
-.appointment-form strong {
+.error strong {
   color: red;
-  text-align: center;
+}
+.alert{
+  position: fixed;
+  top:0;left:0; right: 0;
+  z-index: 1060;
+  display: none;
 }
 /**
 quatrieme PARTIE 1

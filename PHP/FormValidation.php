@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $name_error = "Only letters and white space allowed";
     }
   }
-//
+//check if e-mail is filling well
   if (empty($_POST["email"])) {
     $email_error = "<script> document.getElementById('2').style.borderColor='#FF0000';</script> Email is required ";
   } else {
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $email_error = "Invalid email format jetable";
         }*/
 }
-  //
+  // check if the day, the hour, the doctor is filling well
   if (empty($_POST["day"]) || empty($_POST["time"]) || empty($_POST["doctor"])){
     $day_error = "<script> document.getElementById('3').style.borderColor='#FF0000';</script>";
     $time_error = "<script> document.getElementById('4').style.borderColor='#FF0000';</script>";
@@ -39,14 +39,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $time = test_input($_POST["time"]);
     $doctor = test_input($_POST["doctor"]);
     }
-  //
+  // check if message is filling well
   if (empty($_POST["message"])) {
       $message = "";
       $message_error="<script> document.getElementById('6').style.borderColor='#FF0000';</script> Message is required ";
     } else {
       $message = test_input($_POST["message"]);
     }
-//
+// check address is well-formed
    if ($name_error == '' and $email_error == '' and $champ_error== '' and $doctor_error == '' and $time_error== '' and $day_error == ''){
         $message_body = '';
         unset($_POST['submit']);
@@ -57,13 +57,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mailto = "azizkone14@gmail.com";
         $subject = "Ask for an appointment ";
         $txt =  $email." want to get an appointment with ".$doctor." at ".$day." ". $time.".\n\n" .$message;
+        //check if mail is filling well
         if (mail($mailto, $subject, $txt)){
-          /*  $success ='<script>alert("Message sent, thank you for contacting us!");</script>';*/
+          require("PHP/session.class.php");
+          $session =  new Session();
+          $session -> setFlash('Message sent, thank you for contacting us!');
             $name = $email = $message = $day = $time = $doctor= '';
               header("location:index.php");
-              echo"<script language='javascript'>
-                  alert('Message sent, thank you for contacting us!');
-                  </script>";
         }
     }
 }
