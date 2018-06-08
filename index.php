@@ -1,21 +1,15 @@
-
+<?php include('PHP/FormValidation.php'); ?>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" href="favicon.png" type="image/png">
-  <!-- Include Bootstrap CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Include Font Awesome CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- Include Font Awesome CSS -->
   <link href='https://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <!-- Include Medirev CSS -->
   <link href='css/style.css' rel='stylesheet' type='text/css'>
   <title>Document</title>
 </head>
-
 <body>
   <div class="header">
     <div class="container">
@@ -57,7 +51,6 @@
               <li class="get-a-quote"><a href="#">Get A Quote</a></li>
             </ul>
           </div>
-          <!-- /.navbar-collapse -->
         </div>
       </nav>
     </div>
@@ -119,7 +112,7 @@
   </div>
 </div>
 <!--###########################
-  TROISIEME PARTIE
+  4 PARTIE
 #############################-->
 <div class="appointment-form">
   <div class="container">
@@ -133,45 +126,64 @@
     <div class="col-md-5 col-md-offset-1">
       <div class="appointment-form1">
         <h3>Appointment Form</h3>
-        <form action="php/submit.php" method="Post">
-          <input type="text" class="col-md-12 col-xs-12 appointment-name" name="name" placeholder="Your Name" />
-          <input type="email" class="col-md-12 col-xs-12 appointment-email" name="email" placeholder="Your Email"/>
-          <select name="day" class="col-md-3 col-xs-3 appointment-day">
-            <option value="">Day</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
+        <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="Post">
+          <fieldset>
+          <input type="text" class="col-md-12 col-xs-12 appointment-name" name="name"  id="1" value="<?= $name ?>" placeholder="Your Name" />
+           <span class="error"><?= $name_error ?></span>
+         </fieldset>
+          <fieldset>
+          <input type="email" class="col-md-12 col-xs-12 appointment-email" name="email" id="2"  value="<?= $email ?>"  placeholder="Your Email"/>
+          <span class="error"><?= $email_error ?></span>
+          </br>
+          </fieldset>
+            <fieldset>
+          <select name="day" id="3" value="<?= $day ?>" class="col-md-3 col-xs-3 appointment-day kone">
+            <option>Day </option>
+              <?php
+              //On boucle sur les 7 jours de la semaine
+              $day=array("Monday","Tuesday", "Wednesday","Thursday","Friday","Saturday","Sunday");
+              foreach ($day as $key => $value) {
+                echo '<option value=\'' . $value . '\'>' . $value . '</option>';
+              }
+              ?>
           </select>
-          <select name="time" class="col-md-3 col-xs-3 appointment-time">
-            <option value="">Time</option>
-            <option value="1.30">Time </option>
-            <option value="2.30">Time 2</option>
+            <span class="error"><?= $day_error ?></span>
+          <select name="time" id="4" value="<?= $time ?>" class="col-md-3 col-xs-3 appointment-time kone">
+              <option>Time</option>
+          <?php
+            //On boucle sur le time
+            $start=strtotime('08:00');
+            $end=strtotime('23:30');
+            for ($i=$start;$i<=$end;$i = $i + 15*60)
+            {
+              echo '<option value=\'' . $i . '\'>' . date('H:i A',$i) . '</option>';
+            }
+            ?>
           </select>
-          <select name="doctor" class="col-md-5 col-xs-5 appointment-doctor">
+            <span class="error"><?= $time_error ?></span>
+          <select name="doctor" id="5" value="<?= $doctor ?>" class="kone col-md-5 col-xs-5 appointment-doctor">
             <option value="">Doctor Name</option>
-            <option value="Bappy">Doctor name 1</option>
-            <option value="Bappy">Doctor name 2</option>
-          </select>
-          <textarea name="message" class="col-md-12 col-xs-12 appointment-message" placeholder="Your Message" cols="16" rows="4"></textarea>
-          <button class="col-md-3 col-xs-4 col-md-offset-9 col-xs-offset-8 appointment-submit" name="submit">Send</button>
+            <?php
+              //On boucle sur les noms de doctor
+            $doctor=array("Dr Aziz","Dr Kone", "Dr Karamoko");
+            foreach ($doctor as $key => $value) {
+              echo '<option value=\'' . $value . '\'>' . $value . '</option>';
+            }
+             ?>
+            </select>
+            <span class="error"><?= $doctor_error ?></span>
+            <span class="error"><?= $champ_error ?></span>
+            </fieldset>
+            <textarea name="message" class="col-md-12 col-xs-12 appointment-message" id="6" value="<?= $message ?>" placeholder="Your Message" cols="16" rows="4"></textarea>
+            <span class="error"><?= $message_error ?></span>
+            <button class="col-md-3 col-xs-4 col-md-offset-9 col-xs-offset-8 appointment-submit" name="submit">Send</button>
         </form>
-        <?php
-             if (!isset($_GET['submit'])) {
-               exit();
-             }else{
-               $verifierSubmit = $_GET['submit'];
-               if($verifierSubmit ==  "empty"){
-                 echo " <script> document.getElementById('1').style.borderColor='#FF0000';</script>  ";
-                 echo "<strong class='error' style='color:red; text-align: center; '> Veuillez renseigner les champs vides </strong>";
-                 exit();
-               }
-             }
-           ?>
       </div>
     </div>
   </div>
 </div>
 <!--###########################
-  quatrieme PARTIE
+  5 PARTIE
 #############################-->
 <div class="advantages">
   <div classe="container">
@@ -251,7 +263,7 @@
 </div>
 </div>
 <!--###########################
-  CINQUIEME PARTIE
+  6 PARTIE
 #############################-->
 <div class="workforce" style="background-image:url('img/fun-facts-bg.jpg')">
 		<div class="container">
@@ -284,7 +296,7 @@
 		</div>
 	</div>
   <!--###########################
-6 PARTIE
+7 PARTIE
   #############################-->
   <div class="from-blog">
 		<div class="container">
@@ -328,7 +340,7 @@
 		</div>
 	</div>
   <!--###########################
-7 PARTIE
+8 PARTIE
   #############################-->
   <div class="footer">
   <div class="widget">
@@ -390,7 +402,7 @@
   <div class="copyright text-center">
     <div class="container">
       <div class="row">
-        <p class="copyright">Copyright All Rights Reserved. Design by <a href="http://revolthemes.net/" target="_blank">RevolThemes</a> Develop by <a href="https://www.behance.net/obaidhossain" target="_blank">Obaid Hossain</a></p>
+        <p class="copyright">Copyright All Rights Reserved. Design by <a href="" target="_blank">RevolThemes</a> Develop by <a href="https://www.behance.net/obaidhossain" target="_blank">Obaid Hossain</a></p>
       </div>
     </div>
   </div>
